@@ -19,7 +19,7 @@ Either click the <b>"Upload File"</b> button and browse to your desired image fi
 </ul>
 
 ## Credits
-<p>This product uses the Color Thief API by Lokesh under the MIT License (MIT)<br>
+<p>This product uses the <a href="https://github.com/lokesh/color-thief"><b>Color Thief</b></a> API by Lokesh under the MIT License (MIT)<br>
 Copyright (c) 2015 Lokesh Dhakar</p>
 
 
