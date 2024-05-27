@@ -1,0 +1,65 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final Project</title>
+  <script src="script.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+  <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  </style>
+</head>
+
+<body>
+
+  <h1>Average Color Finder</h1>
+  <h4>This tool exists to let users easily find the average color value across their favorite movies' official poster,
+    or across an image uploaded by the user.</h4>
+  <p>To use this tool, either type a movie title into the searchbox below or upload an image file from your device. <br>
+    <b>Note:</b> Large files may take a long time to load.
+
+  <ul><b>When Using the Search feature, please note:</b>
+    <li>Only the first search result is used. This may lead to images unrelated to your intended film
+      loading into view, depending on the search result.</li>
+    <li>Gibberish, misspelled titles, or titles not listed in the database may return an unrelated image or produce no
+      results.</li>
+  </ul>
+  </p>
+
+  <!-- Holds all of the user input elements.-->
+  <div id="container">
+    <input type="text" id="txtInput" placeholder="Movie Title" value="" />
+
+    <button id="submitBtn" class="btn">Search</button>
+
+    <div>Or</div>
+    <input type="file" id="imgInput" class="btn" accept="image/*" multiple="false" value=""></input>
+    <label for="imgInput" class="btn">Upload File</label>
+  </div>
+
+  <!-- Hidden error message div. Will display only when input field is left blank when the search button is clicked. -->
+  <div id="txtError" class="error" hidden>Search field cannot be blank</div>
+
+  <!-- Container holding the image and a thick border property, with a border color that defaults to the most average gray value; this border color changes based on the average color of the image element provided by the user's file upload or search result feaures. -->
+  <div id="imgDisplay">
+    <div id="searchError" hidden>No Search Results Found</div>
+    <img id="image" alt="">
+  </div>
+  <!-- Holds the Average Color's Div. This is empty until the getColors function is completed, after which it'll share the same RGB value as avgDisplay and it will provide the RGB values for the average color.-->
+  <div id="avgDiv"></div>
+
+  <!-- Notice of use of and disclaimer regarding the APIs in use on this page. -->
+  <div id="credit">
+    This product uses the <a href="https://github.com/lokesh/color-thief"><b>Color Thief</b></a> API by Lokesh Dhakar under the
+    MIT License (MIT) <br> Copyright (c) 2015 Lokesh Dhakar<br><br>
+    This product uses the TMDB API but is not endorsed or certified by TMDB.
+    <a href="https://www.themoviedb.org">
+      <img id="logo"
+        src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_2-9665a76b1ae401a510ec1e0ca40ddcb3b0cfe45f1d51b77a308fea0845885648.svg"
+        alt="Logo for The Movie Database.">
+    </a>
+  </div>
+</body>
+
+</html>
