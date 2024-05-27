@@ -16,7 +16,7 @@
 	const avgDiv = document.querySelector("#avgDiv");
 	const searchError = document.querySelector("#searchError");
 
-	// Parameters that let page use TMDB API.
+	// Parameters that lets the page use TMDB's API.
 	const options = {
 		method: "GET",
 		headers: {
@@ -26,7 +26,7 @@
 		},
 	};
 
-	// gets poster url path, displays the poster, and sets the color of imgDisplay's border.
+	// Gets poster url path, displays the poster, and sets the color of imgDisplay's border.
 	const getPoster = async (id) => {
 		try {
 			const url = `https://api.themoviedb.org/3/movie/${id}/images`;
@@ -116,9 +116,7 @@
 		}
 	});
 
-	/* 	// When the user clicks submitBtn, it'll first check if the search input field is empty. If it is, then the user receives an error and cannot click the button until the field is populated. Afterward, the string is run through the .replace() method so that any spaces are altered to play nice as part of a URL. Then an async request is run using that new title string. If the request is successful, then the result will be hardcoded to response.data.results[0], or the first result in the response.
-	
-Note: This causes an issue where a poor search response may return a movie poster that's unrelated to the title search. */
+	/* 	// When the user clicks submitBtn, it'll first check if the search input field is empty. If it is, then the user receives an error and cannot click the button until the field is populated. Afterward, the string is run through the .replace() method so that any spaces are altered to play nice as part of a URL. Then an async request is run using that new title string. If the request is successful, then the result will be hardcoded to response.data.results[0], which is the first result in the response.*/
 	submitBtn.addEventListener("click", async () => {
 		if (!txtInput.value) {
 			onError();
